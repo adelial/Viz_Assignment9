@@ -65,7 +65,7 @@ public class AgesGraph {
 	        xval = xval+ this.bubbles[i].diameter/2 + this.bubbles[i+1].diameter/2;
 	      }
 	    }
-	    parent.textAlign(parent.CENTER, parent.CENTER);
+	    parent.textAlign(PConstants.CENTER, PConstants.CENTER);
 	    parent.fill(0);
 	    parent.text(dataTable.getColumnTitle(0),initx+20,yval+55); 
 	    	    
@@ -73,9 +73,5 @@ public class AgesGraph {
 	    parent.text("Player ages in the World Cup 2018", parent.width/2+400, yval-80);
 	}
 	  
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-	}	
-		
+
 }

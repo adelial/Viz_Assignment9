@@ -63,7 +63,7 @@ public class DataTable {
 	    numCols = dataCells.getColumnCount();        
 	    for (int cell=0; cell<numCols; cell++) { 
 	    	parent.textSize(this.text_size);
-	    	parent.textAlign(parent.LEFT);
+	    	parent.textAlign(PConstants.LEFT);
 	    	parent.fill(255);
 	    	parent.stroke(parent.color(71,49,93));
 	    	parent.rect(this.xScreen, this.yScreen, this.sizeCellX+10, this.sizeCellY);
@@ -87,7 +87,7 @@ public class DataTable {
 	      this.yScreen = posy;  //  new line
 	    }
 	    for (TableRow row : this.dataCells.rows()) {
-	      for (int x=0; x < numCols; x++) { // build rows with numCols + squence number cells
+	      for (int x=0; x < numCols; x++) { // build rows with numCols + sequence number cells
 	    	parent.fill(255);
 	    	parent.stroke(parent.color(71,49,93));
 	    	parent.rect(this.xScreen, this.yScreen, this.sizeCellX, this.sizeCellY);
@@ -116,9 +116,5 @@ public class DataTable {
 	      i++;
 	    } // for      
 	  }  
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }

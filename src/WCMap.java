@@ -39,7 +39,7 @@ public class WCMap {
 	  this.dataMax = 0;
 	  for (TableRow row : tableData.rows())
 	  {
-		  this.dataMax = parent.max(this.dataMax, row.getFloat(2)); //third column
+		  this.dataMax = this.parent.max(this.dataMax, row.getFloat(2)); //third column
 	  }
 	  this.parent.fill(this.parent.color(222,242,245));
 	  this.parent.noStroke();
@@ -50,7 +50,7 @@ public class WCMap {
     // Draw countries
 	  for (int id : this.geoMap.getFeatures().keySet())
 	  {
-		  String countryCode = this.geoMap.getAttributeTable().findRow(parent.str(id),0).getString("ISO_A3");    
+		  String countryCode = this.geoMap.getAttributeTable().findRow(this.parent.str(id),0).getString("ISO_A3");    
 		  TableRow dataRow = tableData.findRow(countryCode, 0);
    
 		  if (dataRow != null)       // Table row matches country code
@@ -66,7 +66,7 @@ public class WCMap {
 	  }
 	  // Draw title text
 	  this.parent.fill(0);
-	  this.parent.textAlign(this.parent.LEFT, this.parent.TOP);
+	  this.parent.textAlign(PConstants.LEFT, PConstants.TOP);  
 	  this.parent.text("Countries participation in World Cup Russia 2018", xpos+10, sizeh+ypos-12);
   
 	  // Query the country at the mouse position to display Country name
@@ -80,11 +80,5 @@ public class WCMap {
 		  this.parent.text(name, this.parent.mouseX+5, this.parent.mouseY-5);
 	  }
   	} 
-
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }

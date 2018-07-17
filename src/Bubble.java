@@ -44,12 +44,10 @@ public class Bubble {
 	    parent.ellipse(x, y, diameter, diameter);
 	    if (this.diameter > 10) {
 	    	parent.fill(0);
-	    	parent.textAlign(parent.CENTER, parent.CENTER);
+	    	parent.textAlign(PConstants.CENTER, PConstants.CENTER);
 	    	parent.text(this.diameter,x,y);
 	    	parent.text(this.name,x,y+55);
 	    }
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	}
+
 }

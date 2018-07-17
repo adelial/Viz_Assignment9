@@ -23,19 +23,20 @@ public class UsingProcessing extends PApplet {
     	buildTable = new DataTable(this);
     	goalGraph = new GoalScoredGraph(this);
     	
+    	   	
     	PlayersAge.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\SquadsGroupAge.csv");
     	PlayersAge.displayAll(790,120, this, this.color(187,1,4,70), this.color(43,139,222));
     	table1 = loadTable("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\SquadsGroupAge.csv", "header");
     	buildTable.drawTable(805,240, table1, false);    	
     	
     	goalGraph.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\GoalDistribution.csv");
-        goalGraph.createPlot();
-        goalGraph.drawGoalTime();
+        //goalGraph.createPlot();
+      
     }
 
     public void draw(){
     	map1.display(10, 10, "C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\Country_rounds.csv", 760, 400, this);
     	goalGraph.createPlot();
-        goalGraph.drawGoalTime();
+      
     }
 }

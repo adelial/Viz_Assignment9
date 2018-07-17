@@ -5,7 +5,6 @@
 import grafica.*;
 import processing.core.*;
 import processing.data.*;
-import processing.event.*;
 
 public class GoalScoredGraph {
 	  Table goalTable;
@@ -47,12 +46,9 @@ public class GoalScoredGraph {
 	    plot.setPoints(points);
 	    plot.setPointSizes(pointSizes);
 	    plot.activatePointLabels();
-	    plot.activatePanning(this.parent.RIGHT);
-	    plot.activateZooming(1.1f, this.parent.CENTER, this.parent.CENTER);
-	  }
-	  
-	  // Draw the plot
-	  void drawGoalTime(){
+	    plot.activatePanning();
+	    plot.activateZooming(1.3f, PConstants.CENTER, PConstants.CENTER);
+	
 	    plot.beginDraw();
 	    plot.drawBox();
 	    plot.drawXAxis();
@@ -63,9 +59,6 @@ public class GoalScoredGraph {
 	    plot.drawLabels();
 	    plot.endDraw();
 	  }  
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-	}
 
 }
