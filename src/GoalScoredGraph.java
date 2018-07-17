@@ -32,7 +32,7 @@ public class GoalScoredGraph {
 			  String goalsT = goalTable.getString(row, "Goals");
 			  float gSize = goalTable.getFloat(row, "Goals");
 			  points.add(time, goals, goalsT);
-			  pointSizes[row] = gSize*1.4f;
+			  pointSizes[row] = gSize*1.2f;
 		  }
 	  }
 	  
@@ -46,7 +46,7 @@ public class GoalScoredGraph {
 	    plot.setPoints(points);
 	    plot.setPointSizes(pointSizes);
 	    plot.activatePointLabels();
-	    plot.activatePanning();
+	    plot.activatePanning(PConstants.RIGHT);
 	    plot.activateZooming(1.3f, PConstants.CENTER, PConstants.CENTER);
 	
 	    plot.beginDraw();
