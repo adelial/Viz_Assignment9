@@ -12,5 +12,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="core.jar"/>
 	<classpathentry kind="lib" path="geoMap.jar"/>
+	<classpathentry kind="lib" path="treemappa.jar"/>
+	<classpathentry kind="lib" path="grafica.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

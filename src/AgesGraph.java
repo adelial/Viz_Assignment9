@@ -11,16 +11,13 @@ public class AgesGraph {
 	PApplet parent;
 
 	AgesGraph(){
-	
 	}
 	
 	AgesGraph(PApplet p){	
-		parent = p;
-		
+		parent = p;		
 	}
 	  
-	AgesGraph(float posx, float posy, Table dataTable, int backColor, int circleColor, PApplet p){
-		
+	AgesGraph(float posx, float posy, Table dataTable, int backColor, int circleColor, PApplet p){	
 	    this.posx = posx;
 	    this.posy = posy;
 	    this.dataTable = dataTable;
@@ -59,7 +56,7 @@ public class AgesGraph {
 		this.circleColor = parent.color(c2);
 		
 		parent.fill(parent.color(this.backColor));
-	    parent.rect (xval,yval-50, parent.width-60,150); 
+	    parent.rect (xval,yval-50, parent.width-800,150); 
 	    xval = xval+this.bubbles[0].diameter/2 +60;
 	    yval = yval+this.bubbles[0].diameter/2 +10;
 	    for (int i = 0; i < this.bubbles.length; i++) {
@@ -68,17 +65,13 @@ public class AgesGraph {
 	        xval = xval+ this.bubbles[i].diameter/2 + this.bubbles[i+1].diameter/2;
 	      }
 	    }
-	    parent.textAlign(parent.CENTER, parent.CENTER);
+	    parent.textAlign(PConstants.CENTER, PConstants.CENTER);
 	    parent.fill(0);
 	    parent.text(dataTable.getColumnTitle(0),initx+20,yval+55); 
 	    	    
 	    parent.textSize(14);
-	    parent.text("Player ages in the World Cup 2018", parent.width/2, yval-80);
+	    parent.text("Player ages in the World Cup 2018", parent.width/2+400, yval-80);
 	}
 	  
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-	}	
-		
+
 }
