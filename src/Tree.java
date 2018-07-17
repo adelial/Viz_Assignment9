@@ -22,20 +22,41 @@ public class Tree {
 		
 		PImage gTreeMap;
 		//Generate Tree Map
-		pTreeMappa = new PTreeMappa(this.parent);  // Create an empty treemap.    
-		pTreeMappa.readData("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\play.csv");  
+		pTreeMappa = new PTreeMappa(this.parent);  // Create an empty treemap.  
+		
+		if (UsingProcessing.firstInit == "A" || UsingProcessing.firstInit == "a") {
+			pTreeMappa.readData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\play.csv");  
+		}
+		else {
+			pTreeMappa.readData("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\play.csv");
+		}
+		
 		TreeMapPanel tmPanel = pTreeMappa.getTreeMapPanel();
 		tmPanel.setMutation(0.4f);
-		tmPanel.setLeafMaxTextSize(18);
+		tmPanel.setLeafMaxTextSize(36);
 		tmPanel.showStatistics();
 		tmPanel.updateImage();
 		tmPanel.updateLayout();
 		pTreeMappa.createImage();
-		tmPanel.writeImage("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\gameTMap.png");  
+		
+		if (UsingProcessing.firstInit == "A" || UsingProcessing.firstInit == "a") {
+			tmPanel.writeImage("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\gameTMap.png");
+		}
+		else {
+			tmPanel.writeImage("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\gameTMap.png"); 
+		}
+		 
 		
 		//Display Tree Map
+		if (UsingProcessing.firstInit == "A" || UsingProcessing.firstInit == "a") {
+			gTreeMap = this.parent.loadImage("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\gameTMap.png");
+		}
+		else {
+			gTreeMap = this.parent.loadImage("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\gameTMap.png");
+		}
+		
 		gTreeMap = this.parent.loadImage("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\gameTMap.png");
-		gTreeMap.resize(470, 470);
+		gTreeMap.resize(490, 480);
 		this.parent.image(gTreeMap, 1150, 500);
 	}
 
