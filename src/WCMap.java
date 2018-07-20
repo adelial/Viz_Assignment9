@@ -34,10 +34,10 @@ public class WCMap {
 	  this.geoMap = new GeoMap(xpos+10, ypos+10, sizew-20, sizeh-25, p);
 	  
 	  if (UsingProcessing.firstInit == "A" || UsingProcessing.firstInit == "a") {
-		  this.geoMap.readFile("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\src\\world");
+		  this.geoMap.readFile("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\europe");
 	  }
 	  else {
-		  this.geoMap.readFile("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\src\\world");
+		  this.geoMap.readFile("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\src\\europe");
 	  }
 		  
 	  this.tableData = parent.loadTable(file_name);  // Read data
@@ -57,8 +57,8 @@ public class WCMap {
     // Draw countries
 	  for (int id : this.geoMap.getFeatures().keySet())
 	  {
-		  String countryCode = this.geoMap.getAttributeTable().findRow(this.parent.str(id),0).getString("ISO_A3");    
-		  TableRow dataRow = tableData.findRow(countryCode, 0);
+		  String countryName = this.geoMap.getAttributeTable().findRow(this.parent.str(id),0).getString("CNTRY_NAME");    
+		  TableRow dataRow = tableData.findRow(countryName, 1);
    
 		  if (dataRow != null)       // Table row matches country code
 		  {
@@ -82,7 +82,7 @@ public class WCMap {
 		  this.parent.fill(this.parent.color(80, 120, 120));
 		  this.geoMap.draw(id);
  
-		  String name = this.geoMap.getAttributeTable().findRow(parent.str(id),0).getString("NAME");    
+		  String name = this.geoMap.getAttributeTable().findRow(parent.str(id),1).getString("CNTRY_NAME");    
 		  this.parent.fill(0);
 		  this.parent.text(name, this.parent.mouseX+5, this.parent.mouseY-5);
 	  }

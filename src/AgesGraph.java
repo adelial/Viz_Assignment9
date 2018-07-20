@@ -8,6 +8,7 @@ public class AgesGraph {
 	/*int backColor = color(#B5E5B5);
 	int circleColor = color(#9396F7); */
 	int backColor, circleColor;
+	int factor;
 	PApplet parent;
 
 	AgesGraph(){
@@ -26,7 +27,7 @@ public class AgesGraph {
 	    parent = p;
 	}
 
-	public void loadData(String filename) {
+	public void loadData(String filename, int factor) {
 	    // Load CSV file into a Table object, sorted already in DESC order
 	    this.dataTable = parent.loadTable(filename, "header");
 	 
@@ -38,11 +39,11 @@ public class AgesGraph {
 	    for (int i = 0; i < dataTable.getRowCount(); i++) {
 	    	TableRow row = dataTable.getRow(i);
 	      // d number of players with a specific Age
-	    	int d = row.getInt(1);
+	    	int d = row.getInt(1)*factor;
 	    	String n = row.getString(0);
 	    	 
 	      // Make a Bubble object out of the data read
-	      this.bubbles[i] = new Bubble(d, n);
+	      this.bubbles[i] = new Bubble(d, n, factor);
 	    }
 	}
 	
@@ -60,7 +61,7 @@ public class AgesGraph {
 	    xval = xval+this.bubbles[0].diameter/2 +60;
 	    yval = yval+this.bubbles[0].diameter/2 +10;
 	    for (int i = 0; i < this.bubbles.length; i++) {
-	      this.bubbles[i].display(xval, yval, circleColor, parent);
+	      this.bubbles[i].display(xval, yval, circleColor, parent, 15);
 	      if (i < this.bubbles.length-1) {
 	        xval = xval+ this.bubbles[i].diameter/2 + this.bubbles[i+1].diameter/2;
 	      }
@@ -69,8 +70,8 @@ public class AgesGraph {
 	    parent.fill(0);
 	    parent.text(dataTable.getColumnTitle(0),initx+20,yval+55); 
 	    	    
-	    parent.textSize(14);
-	    parent.text("Player ages in the World Cup 2018", parent.width/2+400, yval-80);
+	 //   parent.textSize(14);
+	 //   parent.text("Player ages in the World Cup 2018", parent.width/2+400, yval-80);
 	}
 	  
 

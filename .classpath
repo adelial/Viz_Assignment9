@@ -14,6 +14,6 @@
 	<classpathentry kind="lib" path="geoMap.jar"/>
 	<classpathentry kind="lib" path="treemappa.jar"/>
 	<classpathentry kind="lib" path="grafica.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Sturrock/Documents/SMU Data Science/Vizualization/Viz_Assignment9/gicentreUtils.jar"/>
+	<classpathentry kind="lib" path="gicentreUtils.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

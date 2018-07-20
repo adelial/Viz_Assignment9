@@ -1,8 +1,6 @@
 //Draw TreeMap Showing Average Time Breakout per Game
 import processing.core.PApplet;
 import processing.core.PImage;
-import processing.data.*;
-
 import org.gicentre.treemappa.*;
 
 public class Tree {
@@ -55,7 +53,7 @@ public class Tree {
 			gTreeMap = this.parent.loadImage("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\gameTMap.png");
 		}
 		
-		gTreeMap = this.parent.loadImage("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\gameTMap.png");
+		//gTreeMap = this.parent.loadImage("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\gameTMap.png");
 		gTreeMap.resize(490, 480);
 		this.parent.image(gTreeMap, 1150, 500);
 	}

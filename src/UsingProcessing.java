@@ -7,8 +7,9 @@ import processing.data.*;
 
 public class UsingProcessing extends PApplet {
 
-	//Class Declarations
-	AgesGraph PlayersAge;
+	//Class Declarations 
+	AgesGraph PlayersAgeFR;
+	AgesGraph PlayersAgeCT;
 	WCMap map1;
 	DataTable buildTable;
 	Table table1;
@@ -17,9 +18,9 @@ public class UsingProcessing extends PApplet {
 	Tree tree;
 
 	//Static Variable Used to Toggle between A and G to switch folder paths
-	public static String firstInit = "G";
+	public static String firstInit = "A";
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		PApplet.main(new String[] {"UsingProcessing"} );
 	}
 	
@@ -29,7 +30,8 @@ public class UsingProcessing extends PApplet {
 
     public void setup(){
     	fill(120,50,240);
-    	PlayersAge = new AgesGraph(this);
+    	PlayersAgeFR = new AgesGraph(this);
+    	PlayersAgeCT = new AgesGraph(this);
     	map1 = new WCMap(this);
     	buildTable = new DataTable(this);
     	goalGraph = new GoalScoredGraph(this);
@@ -37,22 +39,22 @@ public class UsingProcessing extends PApplet {
     	tree = new Tree(this);
 
     	if (firstInit == "A" || firstInit == "a") {
-    		PlayersAge.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\SquadsGroupAge.csv");
+    		PlayersAgeFR.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\FranceAges.csv",15);
+    		PlayersAgeCT.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\CroatiaAges.csv",15);
     		table1 = loadTable("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\SquadsGroupAge.csv", "header");
     		goalGraph.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\GoalDistribution.csv");
     		marketValue.setMV("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\FIFA18_MVteam.csv");
     	}
     	else {
-    		PlayersAge.loadData("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\SquadsGroupAge.csv");
+    		PlayersAgeFR.loadData("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\SquadsGroupAge.csv",20);
     		table1 = loadTable("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\SquadsGroupAge.csv", "header");
     		goalGraph.loadData("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\GoalDistribution.csv");    	
     		marketValue.setMV("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\FIFA18_MVteam.csv");
     	}
     	
-    	//PlayersAge.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\SquadsGroupAge.csv");
-    	PlayersAge.displayAll(790,120, this, this.color(187,1,4,70), this.color(43,139,222));
-    	//table1 = loadTable("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\SquadsGroupAge.csv", "header");
-    	buildTable.drawTable(805,240, table1, false);    	
+    	PlayersAgeFR.displayAll(790,120, this, this.color(187,1,4,70), this.color(43,139,222));
+    	//buildTable.drawTable(805,240, table1, false);    	
+    	PlayersAgeCT.displayAll(790,300, this, this.color(187,1,4,70), this.color(43,139,222));
     	
     	marketValue.mvDraw();
     	tree.drawTreeMap();

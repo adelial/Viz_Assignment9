@@ -3,6 +3,7 @@ import processing.core.*;
 public class Bubble {
 	float x, y;
 	int diameter=30;
+	int factor=1;
 	String name;
 	int circleColor;
 	boolean over = false;
@@ -12,9 +13,10 @@ public class Bubble {
 		parent = p;
 	}
 
-	Bubble(int diameter, String name) {
+	Bubble(int diameter, String name, int factor) {
 		this.diameter = diameter;
 	    this.name = name;
+	    this.factor = factor;
 	}
 	 
 	Bubble(int diameter, String name, int circleColor) {
@@ -31,7 +33,7 @@ public class Bubble {
 	}
 	  
 	// Display the Bubble
-	public void display(int xpos, int ypos, int circleColor, PApplet p) {
+	public void display(int xpos, int ypos, int circleColor, PApplet p, int factor) {
 		this.parent = p;
 		parent.stroke(0);
 	    parent.strokeWeight(2);
@@ -42,10 +44,12 @@ public class Bubble {
 	    parent.fill(parent.color(circleColor));
 	    parent.noStroke();
 	    parent.ellipse(x, y, diameter, diameter);
+	    int num = 0;
 	    if (this.diameter > 10) {
 	    	parent.fill(0);
 	    	parent.textAlign(PConstants.CENTER, PConstants.CENTER);
-	    	parent.text(this.diameter,x,y);
+	    	num = this.diameter/factor;
+	    	parent.text(num,x,y);
 	    	parent.text(this.name,x,y+55);
 	    }
 	}
