@@ -13,7 +13,7 @@ public class Bubble {
 		parent = p;
 	}
 
-	Bubble(int diameter, String name, int factor) {
+	Bubble(int diameter, String name, int circleColor, int factor) {
 		this.diameter = diameter;
 	    this.name = name;
 	    this.factor = factor;

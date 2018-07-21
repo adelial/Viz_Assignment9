@@ -5,8 +5,6 @@ public class AgesGraph {
 	Bubble[] bubbles;
 	Table dataTable;
 	float posx,posy;
-	/*int backColor = color(#B5E5B5);
-	int circleColor = color(#9396F7); */
 	int backColor, circleColor;
 	int factor;
 	PApplet parent;
@@ -47,7 +45,7 @@ public class AgesGraph {
 	    }
 	}
 	
-	public void displayAll(int px, int py, PApplet p, int c1, int c2) {
+	public void displayAll(int px, int py, PApplet p, int c1, int c2, String title,int swidth) {
 		int xval, yval, initx;
 		parent = p;
 		xval = px;
@@ -57,21 +55,23 @@ public class AgesGraph {
 		this.circleColor = parent.color(c2);
 		
 		parent.fill(parent.color(this.backColor));
-	    parent.rect (xval,yval-50, parent.width-800,150); 
+		parent.noStroke();
+	    parent.rect (xval,yval-50, swidth,150); 
 	    xval = xval+this.bubbles[0].diameter/2 +60;
 	    yval = yval+this.bubbles[0].diameter/2 +10;
 	    for (int i = 0; i < this.bubbles.length; i++) {
 	      this.bubbles[i].display(xval, yval, circleColor, parent, 15);
 	      if (i < this.bubbles.length-1) {
-	        xval = xval+ this.bubbles[i].diameter/2 + this.bubbles[i+1].diameter/2;
+	        xval = xval+ this.bubbles[i].diameter/2 + this.bubbles[i+1].diameter/2+5;
 	      }
 	    }
 	    parent.textAlign(PConstants.CENTER, PConstants.CENTER);
 	    parent.fill(0);
 	    parent.text(dataTable.getColumnTitle(0),initx+20,yval+55); 
 	    	    
-	 //   parent.textSize(14);
-	 //   parent.text("Player ages in the World Cup 2018", parent.width/2+400, yval-80);
+	    parent.textSize(16);
+	    parent.text(title, swidth/2, yval-80);
+	    parent.textSize(12);
 	}
 	  
 

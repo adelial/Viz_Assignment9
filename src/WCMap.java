@@ -82,8 +82,10 @@ public class WCMap {
 		  this.parent.fill(this.parent.color(80, 120, 120));
 		  this.geoMap.draw(id);
  
-		  String name = this.geoMap.getAttributeTable().findRow(parent.str(id),1).getString("CNTRY_NAME");    
+		  String name = this.geoMap.getAttributeTable().findRow(parent.str(id),0).getString("CNTRY_NAME");    
+		  System.out.println(name);
 		  this.parent.fill(0);
+		  this.parent.textSize(14);
 		  this.parent.text(name, this.parent.mouseX+5, this.parent.mouseY-5);
 	  }
   	} 
