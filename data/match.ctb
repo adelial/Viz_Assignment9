@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+
+<!--Colour table rules-->
+<!--Each rule associates a colour with a value.-->
+<colourTable>
+ <rule value="1" type="discrete">0,35,149</rule>
+ <rule value="2" type="discrete">255,0,0</rule>
+</colourTable>
