@@ -20,7 +20,9 @@ public class UsingProcessing extends PApplet {
 	PImage img1, img2;
 	
 	//Static Variable Used to Toggle between A and G to switch folder paths
-	public static String firstInit = "A";
+	public static String localPath = "C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\";
+	//public static String localPath = "C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\";
+	
 	public static PImage textImg;
 	
 	public static void main(String[] args) { 
@@ -43,25 +45,13 @@ public class UsingProcessing extends PApplet {
     	tree = new Tree(this);
     	sboard = new ScoreBoard(this);
 
-    	if (firstInit == "A" || firstInit == "a") {
-    		PlayersAgeFR.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\FranceAges.csv",15);
-    		PlayersAgeCT.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\CroatiaAges.csv",15);
-    		table1 = loadTable("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\SquadsGroupAge.csv", "header");
-    		goalGraph.loadData("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\GoalDistribution.csv");
-    		marketValue.setMV("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\FIFA18_MVteam.csv");
-    	}
-    	else {
-    		PlayersAgeFR.loadData("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\SquadsGroupAge.csv",20);
-    		table1 = loadTable("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\SquadsGroupAge.csv", "header");
-    		goalGraph.loadData("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\GoalDistribution.csv");    	
-    		marketValue.setMV("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\FIFA18_MVteam.csv");
-    	}
-    	
-    	
-    	
-    	
-    	img1 = loadImage("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\longfifa.jpg");
-    	img2 = loadImage("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\fifa2018.jpg");
+   		PlayersAgeFR.loadData(localPath+"FranceAges.csv",15);
+   		PlayersAgeCT.loadData(localPath+"CroatiaAges.csv",15);
+ //		table1 = loadTable(localPath+"SquadsGroupAge.csv", "header");
+   		goalGraph.loadData(localPath+"GoalDistribution.csv");
+   		marketValue.setMV(localPath+"FIFA18_MVteam.csv");
+    	img1 = loadImage(localPath+"longfifa.jpg");
+    	img2 = loadImage(localPath+"fifa2018.jpg");
     	
     //	marketValue.mvDraw();
     //	tree.drawTreeMap();
@@ -70,12 +60,7 @@ public class UsingProcessing extends PApplet {
 
     public void draw(){
     	image(img2,0,0);
-    	if (firstInit == "A" || firstInit == "a") {
-    		map1.display(960, 55, "C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\Country_rounds.csv", 670, 300, this);
-    	}
-    	else {
-    		map1.display(860, 55, "C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\Country_rounds.csv", 760, 400, this);
-    	}
+   		map1.display(960, 55, localPath+"Country_rounds.csv", 670, 300, this);
     	image(img1, width/2-img1.width/2,1);
     	sboard.display(40, 65,color(199,200,200));
     	PlayersAgeFR.displayAll(20,620, this, this.color(187,1,4,70), this.color(43,139,222), "France and Croatia Payers Age",500);

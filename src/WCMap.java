@@ -33,12 +33,7 @@ public class WCMap {
 	  
 	  this.geoMap = new GeoMap(xpos+10, ypos+10, sizew-20, sizeh-25, p);
 	  
-	  if (UsingProcessing.firstInit == "A" || UsingProcessing.firstInit == "a") {
-		  this.geoMap.readFile("C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\europe");
-	  }
-	  else {
-		  this.geoMap.readFile("C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\src\\europe");
-	  }
+	  this.geoMap.readFile(UsingProcessing.localPath+"europe");
 		  
 	  this.tableData = parent.loadTable(file_name);  // Read data
    
