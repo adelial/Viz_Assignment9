@@ -33,7 +33,6 @@ public class AgesGraph {
 	    this.bubbles = new Bubble[dataTable.getRowCount()]; 
 
 	    // You can access iterate over all the rows in a table
-	   
 	    for (int i = 0; i < dataTable.getRowCount(); i++) {
 	    	TableRow row = dataTable.getRow(i);
 	      // d number of players with a specific Age

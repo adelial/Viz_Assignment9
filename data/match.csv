@@ -1,0 +1,11 @@
+﻿#Label,Order,Size,Colour,x,y,Level0,Level1
+Goals,,4,1,,,1,France
+Goals,,2,2,,,1,Croatia
+Total Shots,,8,1,,,2,France
+Total Shots,,15,2,,,2,Croatia
+Shots on Goal,,6,1,,,3,France
+Shots on Goal,,3,2,,,3,Croatia
+Corners,,2,1,,,4,France
+Corners,,6,2,,,4,Croatia
+Time of Possession,,31,1,,,5,France
+Time of Possession,,69,2,,,5,Croatia

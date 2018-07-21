@@ -14,8 +14,8 @@ public class MarketValue {
 	BarChart barChart;
 
 	Table mvTable;
-	float[] mv = new float[10];
-	String[] country = new String[10];
+	float[] mv = new float[2];
+	String[] country = new String[2];
 	PApplet parent;
 
 	//Constructors
@@ -51,11 +51,12 @@ public class MarketValue {
 		barChart.showValueAxis(true); 
 		barChart.showCategoryAxis(true); 
 
-		barChart.draw(600, this.parent.height/1.9f, this.parent.width/3f, this.parent.height/2.2f);
+		barChart.draw(550, this.parent.height/1.9f, this.parent.width/3.1f, this.parent.height/2.2f);
 		this.parent.fill(0);
 		//textFont(titleFont);
-		this.parent.text("Market Value of World Cup 2018 Teams (in Millions of Euros)", this.parent.width/2.6f, this.parent.height/1.9f);
-		this.parent.text("Top 10 - in Millions of Euros", this.parent.width/2.1f, this.parent.height/1.8f);
+		this.parent.textSize(18);
+		this.parent.text("Market Value (in Millions of Euros)", this.parent.width/2.0f, this.parent.height/1.9f);
+		this.parent.text("France vs Croatia", this.parent.width/2.0f, this.parent.height/1.85f);
 		//float textHeight = this.parent.textAscent();
 	} 	
 

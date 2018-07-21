@@ -35,6 +35,7 @@ public class Bubble {
 	// Display the Bubble
 	public void display(int xpos, int ypos, int circleColor, PApplet p, int factor) {
 		this.parent = p;
+		parent.textSize(12);
 		parent.stroke(0);
 	    parent.strokeWeight(2);
 	    parent.noFill();
