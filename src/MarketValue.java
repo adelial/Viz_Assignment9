@@ -57,7 +57,6 @@ public class MarketValue {
 		this.parent.textSize(18);
 		this.parent.text("Market Value (in Millions of Euros)", this.parent.width/2.0f, this.parent.height/1.9f);
 		this.parent.text("France vs Croatia", this.parent.width/2.0f, this.parent.height/1.85f);
-		//float textHeight = this.parent.textAscent();
 	} 	
 
 }

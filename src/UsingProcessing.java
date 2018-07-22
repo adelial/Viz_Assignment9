@@ -16,10 +16,11 @@ public class UsingProcessing extends PApplet {
 	GoalScoredGraph goalGraph;
 	MarketValue marketValue;
 	Tree tree;
-	//ScoreBoard sboard;
+	WCScoreBoard wcBoard;
+
 	PImage img1, img2;
 	
-	//Static Variable Used to Toggle between A and G to switch folder paths
+	//Static Variable Used to Toggle between A and G folder paths
 	//public static String localPath = "C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\";
 	public static String localPath = "C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\";
 	
@@ -43,8 +44,8 @@ public class UsingProcessing extends PApplet {
     	goalGraph = new GoalScoredGraph(this);
     	marketValue = new MarketValue(this);
     	tree = new Tree(this);
-    	//sboard = new ScoreBoard(this);
-
+    	wcBoard = new WCScoreBoard(this, 20f, 60f, 600f, 400f, "France", "Croatia", 4, 2);
+    	
    		PlayersAgeFR.loadData(localPath+"FranceAges.csv",15);
    		PlayersAgeCT.loadData(localPath+"CroatiaAges.csv",15);
  //		table1 = loadTable(localPath+"SquadsGroupAge.csv", "header");
@@ -62,14 +63,14 @@ public class UsingProcessing extends PApplet {
     	image(img2,0,0);
    		map1.display(960, 55, localPath+"Country_rounds.csv", 670, 300, this);
     	image(img1, width/2-img1.width/2,1);
-    	//sboard.display(40, 65,color(199,200,200));
     	PlayersAgeFR.displayAll(20,620, this, this.color(187,1,4,70), this.color(43,139,222), "France and Croatia Payers Age",500);
     	//buildTable.drawTable(805,240, table1, false);    	
     	PlayersAgeCT.displayAll(20,800, this, this.color(187,1,4,70), this.color(43,139,222),"",500);
     	//goalGraph.createPlot();
     	marketValue.mvDraw();
     	tree.display();
-      
+    	wcBoard.display();
+    
     }
     
 }
