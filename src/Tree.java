@@ -2,10 +2,12 @@
 ////http://www.staff.city.ac.uk/~jwo/treemappa/software/userguide.html
 ////https://www.gicentre.net/treemappa/using/
 
+import org.gicentre.treemappa.PTreeMappa;
+import org.gicentre.treemappa.TreeMapPanel;
+import org.gicentre.utils.colour.ColourTable;
+
 import processing.core.PApplet;
 import processing.core.PImage;
-import org.gicentre.treemappa.*;
-import org.gicentre.utils.colour.*;
 
 public class Tree {
 
@@ -43,7 +45,7 @@ public class Tree {
 		
 		tmPanel.writeImage(UsingProcessing.localPath+"matchTMap.png");
 		
-	}
+	} //drawTreeMap
 	
     public void display() {
     	//Display Tree Map
@@ -54,6 +56,6 @@ public class Tree {
 		gTreeMap.resize(560, 480);
 		this.parent.image(gTreeMap, 1070, 500);
     	
-    }
+    }  // display
 
-}
+} //class

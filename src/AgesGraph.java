@@ -1,5 +1,8 @@
-import processing.core.*;
-import processing.data.*;
+// Age Graph class used to draw a bubble graph with the provided data in a csv file
+import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.data.Table;
+import processing.data.TableRow;
 
 public class AgesGraph {
 	Bubble[] bubbles;
@@ -25,6 +28,7 @@ public class AgesGraph {
 	    parent = p;
 	}
 
+	// Create an array of bubble based on the data provided in filename, factor parameter is used to determine the size of the bubbles
 	public void loadData(String filename, int factor) {
 	    // Load CSV file into a Table object, sorted already in DESC order
 	    this.dataTable = parent.loadTable(filename, "header");
@@ -35,15 +39,16 @@ public class AgesGraph {
 	    // You can access iterate over all the rows in a table
 	    for (int i = 0; i < dataTable.getRowCount(); i++) {
 	    	TableRow row = dataTable.getRow(i);
-	      // d number of players with a specific Age
+	      // d number of players with a specific Age  multiply by the factor.
 	    	int d = row.getInt(1)*factor;
 	    	String n = row.getString(0);
 	    	 
 	      // Make a Bubble object out of the data read
 	      this.bubbles[i] = new Bubble(d, n, factor);
 	    }
-	}
+	} //loadData
 	
+	// With the use of the bubble created in loadData it will display all the bubbles
 	public void displayAll(int px, int py, PApplet p, int c1, int c2, String title,int swidth) {
 		int xval, yval, initx;
 		parent = p;
@@ -71,7 +76,5 @@ public class AgesGraph {
 	    parent.textSize(16);
 	    parent.text(title, swidth/2, yval-80);
 	    parent.textSize(12);
-	}
-	  
-
-}
+	} //displayAll
+} //class

@@ -1,4 +1,6 @@
-import processing.core.*;
+// Bubble class used for AgesGraph
+import processing.core.PApplet;
+import processing.core.PConstants;
 
 public class Bubble {
 	float x, y;

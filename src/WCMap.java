@@ -1,7 +1,10 @@
 //  Draws a choropleth map of countries participation in World Cup Russia 2018.
-import org.gicentre.geomap.*;
-import processing.core.*;
-import processing.data.*;
+// Fot this project Europe continent was used instead of World
+import org.gicentre.geomap.GeoMap;
+import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.data.Table;
+import processing.data.TableRow;
 
 public class WCMap {
   GeoMap geoMap;
@@ -69,7 +72,7 @@ public class WCMap {
 	  // Draw title text
 	  this.parent.fill(0);
 	  this.parent.textAlign(PConstants.LEFT, PConstants.TOP);  
-	  this.parent.text("Countries participation in World Cup Russia 2018", xpos+10, sizeh+ypos-12);
+	  this.parent.text("European countries participation in World Cup Russia 2018", xpos+10, ypos+5);
   
 	  // Query the country at the mouse position to display Country name
 	  int id = this.geoMap.getID(this.parent.mouseX, this.parent.mouseY);
@@ -78,11 +81,10 @@ public class WCMap {
 		  this.geoMap.draw(id);
  
 		  String name = this.geoMap.getAttributeTable().findRow(parent.str(id),0).getString("CNTRY_NAME");    
-		  System.out.println(name);
+		  
 		  this.parent.fill(0);
 		  this.parent.textSize(14);
 		  this.parent.text(name, this.parent.mouseX+5, this.parent.mouseY-5);
 	  }
-  	} 
-
-}
+  	} //display
+} //class

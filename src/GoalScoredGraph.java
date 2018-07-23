@@ -2,9 +2,11 @@
 // this is used for players age graph
 
 
-import grafica.*;
-import processing.core.*;
-import processing.data.*;
+import grafica.GPlot;
+import grafica.GPointsArray;
+import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.data.Table;
 
 public class GoalScoredGraph {
 	  Table goalTable;

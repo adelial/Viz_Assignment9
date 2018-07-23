@@ -1,4 +1,4 @@
-import processing.core.*;
+import processing.core.PApplet;
 
 public class ScoreBoard {
 	float spacew, spaceh;
