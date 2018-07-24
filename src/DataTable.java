@@ -2,8 +2,10 @@
 // position in the screen can be defined 
 // number of columns are defined by the table used to populate the data table
 // orientation vertical/horizontal is also dynamic
-import processing.core.*;
-import processing.data.*;
+import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.data.Table;
+import processing.data.TableRow;
 
 public class DataTable {
 	int i =0;

@@ -2,12 +2,12 @@
  * 
  */
 //Processing Libraries
-import processing.core.PApplet;
-import processing.data.*;
-
 //GiCentre Libraries
-import org.gicentre.utils.stat.*;
 //import org.gicentre.utils.colour.*;
+import org.gicentre.utils.stat.BarChart;
+
+import processing.core.PApplet;
+import processing.data.Table;
 
 public class MarketValue {
 

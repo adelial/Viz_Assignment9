@@ -1,9 +1,18 @@
+//********************************************//
+// MSDS 6390 - Visualization of Information   // 
+// Assignment 9 - Object Oriented Project     //
+// Names:  Alma Lopez and George Sturrock     //
+//********************************************//
+
 //Credit To:
 //https://study.com/academy/lesson/java-global-variable-declaration-examples.html
 //https://www.tutorialspoint.com/eclipse/eclipse_create_java_class.htm
+//https://processing.org/tutorials/eclipse/ 
 
-import processing.core.*;
-import processing.data.*;
+import processing.core.PApplet;
+import processing.core.PImage;
+import processing.data.Table;
+//import src.WCScoreBoard;
 
 public class UsingProcessing extends PApplet {
 
@@ -21,8 +30,8 @@ public class UsingProcessing extends PApplet {
 	PImage img1, img2;
 	
 	//Static Variable Used to Toggle between A and G folder paths
-	//public static String localPath = "C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\";
-	public static String localPath = "C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\";
+	public static String localPath = "C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\";
+	//public static String localPath = "C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\";
 	
 	public static PImage textImg;
 	
@@ -31,12 +40,13 @@ public class UsingProcessing extends PApplet {
 	}
 	
 	public void settings(){
-		size(1650,1000);
+		size(1650,1000);   // Size of the window
     }
 
     public void setup(){
     	
     	fill(120,50,240);
+    	// Creation of objects 
     	PlayersAgeFR = new AgesGraph(this);
     	PlayersAgeCT = new AgesGraph(this);
     	map1 = new WCMap(this);
@@ -46,31 +56,31 @@ public class UsingProcessing extends PApplet {
     	tree = new Tree(this);
     	wcBoard = new WCScoreBoard(this, 20f, 60f, 600f, 400f, "France", "Croatia", 4, 2);
     	
+    	// load data for the different graphs
    		PlayersAgeFR.loadData(localPath+"FranceAges.csv",15);
    		PlayersAgeCT.loadData(localPath+"CroatiaAges.csv",15);
- //		table1 = loadTable(localPath+"SquadsGroupAge.csv", "header");
    		goalGraph.loadData(localPath+"GoalDistribution.csv");
    		marketValue.setMV(localPath+"FIFA18_MVteam.csv");
+   		
+   		//load images
     	img1 = loadImage(localPath+"longfifa.jpg");
     	img2 = loadImage(localPath+"fifa2018.jpg");
-    	
-    	marketValue.mvDraw();
-    	tree.drawTreeMap();
-    	    
-    }
+    	  	    	    
+    } //setup
 
     public void draw(){
     	image(img2,0,0);
-   		map1.display(960, 55, localPath+"Country_rounds.csv", 670, 300, this);
+    	// WC european map
+   		map1.display(890, 60, localPath+"Country_rounds.csv", 700, 400, this);
     	image(img1, width/2-img1.width/2,1);
-    	PlayersAgeFR.displayAll(20,620, this, this.color(187,1,4,70), this.color(43,139,222), "France and Croatia Payers Age",500);
-    	//buildTable.drawTable(805,240, table1, false);    	
-    	PlayersAgeCT.displayAll(20,800, this, this.color(187,1,4,70), this.color(43,139,222),"",500);
-    	//goalGraph.createPlot();
+    	//Players age bubble graph
+    	PlayersAgeFR.displayAll(20,620, this, this.color(187,1,4,70), this.color(43,139,222), "France Players Age",500);	
+    	PlayersAgeCT.displayAll(20,820, this, this.color(187,1,4,70), this.color(43,139,222),"Croatia Players Age",500);
+    	//Market value graph
     	marketValue.mvDraw();
+    	//Treemap
     	tree.display();
-    	wcBoard.display();
-    
-    }
-    
-}
+    	//WC board
+    	wcBoard.display();    
+    } // draw
+} // class
