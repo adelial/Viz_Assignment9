@@ -30,8 +30,8 @@ public class UsingProcessing extends PApplet {
 	PImage img1, img2;
 	
 	//Static Variable Used to Toggle between A and G folder paths
-	public static String localPath = "C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\";
-	//public static String localPath = "C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\";
+	//public static String localPath = "C:\\Users\\Alma\\eclipse-workspace\\Viz_Assignment9\\data\\";
+	public static String localPath = "C:\\Users\\Sturrock\\Documents\\SMU Data Science\\Vizualization\\Viz_Assignment9\\data\\";
 	
 	public static PImage textImg;
 	
